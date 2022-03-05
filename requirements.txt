@@ -6,7 +6,7 @@ matplotlib
 more-itertools
 pickleshare==0.7.5
 cloudpickle==2.0.0
-random
+mkl-random==1.2.2
 lightgbm
 optuna
 scikit-learn
