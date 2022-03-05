@@ -1,13 +1,11 @@
 streamlit==1.5.1
 pandas==1.3.4
-numpy @ file:///opt/concourse/worker/volumes/live/9909a8d0-9b8e-44eb-6059-6c668078c029/volume/numpy_and_numpy_base_1626271794641/work
+numpy==1.21.0
 plotly==5.5.0
-matplotlib @ file:///opt/concourse/worker/volumes/live/f670ab63-e220-495e-450b-14c9591f195b/volume/matplotlib-suite_1634667037960/work
-matplotlib-inline @ file:///tmp/build/80754af9/matplotlib-inline_1628242447089/work
-more-itertools @ file:///tmp/build/80754af9/more-itertools_1635423142362/work
-pickleshare @ file:///tmp/build/80754af9/pickleshare_1606932040724/work
-cloudpickle @ file:///tmp/build/80754af9/cloudpickle_1632508026186/work
-mkl-random @ file:///opt/concourse/worker/volumes/live/0cda23d8-7460-44b2-7e5d-3c76a8a0ca7e/volume/mkl_random_1626186083266/work
+matplotlib
+more-itertools
+pickle
+random
 lightgbm @ file:///opt/concourse/worker/volumes/live/867214b8-38e3-46be-48f8-a3050859c966/volume/lightgbm_1633019191620/work
 optuna @ file:///home/conda/feedstock_root/build_artifacts/optuna_1633337702246/work
 scikit-image==0.18.3
