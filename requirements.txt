@@ -10,3 +10,4 @@ mkl-random
 lightgbm==3.2.1
 optuna==2.10.0
 scikit-learn==0.24.2
+openpyxl
