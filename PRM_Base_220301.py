@@ -95,6 +95,7 @@ else:
     fig=prm.Spidergram_simple(pred_data, "log", "on","#f08575", "-", "off", fig, ax)
     plt.title(choice_sample)
     plt.legend(["Metabasalt comp.", "Protolith comp."])
+    plt.ylim(0.1, 1000)
     st.pyplot(fig)
     ###### Data visualization
 
