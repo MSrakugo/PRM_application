@@ -141,5 +141,6 @@ else:
 
 st.subheader("Cite this article")
 st.caption("Matsuno, S., Uno, M., Okamoto, A. Tsuchiya, N. Machine-learning techniques for quantifying the protolith composition and mass transfer history of metabasalt. Sci Rep 12, 1385 (2022). https://doi.org/10.1038/s41598-022-05109-x")
-
+st.caption("Press release in Japanese: https://www.tohoku.ac.jp/japanese/2022/02/press20220210-01-machine.html")
+st.caption("Press release in English: Coming soon...")
 st.caption("Made by Satoshi Matsuno (Graduate School of Environmental Studies, Tohoku univ.)")
