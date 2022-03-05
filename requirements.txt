@@ -4,7 +4,7 @@ numpy==1.21.0
 plotly==5.5.0
 matplotlib
 more-itertools
-pickle
+pickleshare @ file:///tmp/build/80754af9/pickleshare_1606932040724/work
 random
 lightgbm
 optuna
