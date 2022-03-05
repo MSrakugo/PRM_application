@@ -50,7 +50,7 @@ st.header("Protolith reconstruction model for Metabasalt")
 st.caption("This is a prototype application. If you find any errors, please point them out to us through Github.")
 ###### Data read
 uploaded_file = st.sidebar.file_uploader("Choose a file (Excel or CSV)")
-index_col = age = st.sidebar.slider('Input index_columns number', 0, 10, 1)
+index_col = age = st.sidebar.slider('Input index_columns number', 0, 10, 0)
 header = age = st.sidebar.slider('Input header number', 0, 10, 0)
 DataBase=st.sidebar.text_input("Write database", "example: Kelley et al. 2003")
 SAMPLE_INFO=st.sidebar.text_input("Write sample infomation", "example: Seafloor altered basalt")
