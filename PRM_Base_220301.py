@@ -53,7 +53,7 @@ st.caption("This is a prototype application. If you find any errors, please poin
 st.caption("Protolith included in training data: Mid-ocean ridge (MORB), Ocean island basalt (OIB), Volcanic arc basalt (VAB), Back-arc basin basalt (BAB)")
 
 #### read example dataset
-example_data = pd.read_excel("Example_dataset/Kelley_2003_compile.xlsx")
+example_data = pd.read_csv("Example_dataset/Example_dataset(Kelley_2003).csv")
 st.sidebar.download_button(
     label="Example dataset (Quoted from PetDB)",
     data=example_data.to_csv().encode('utf-8'),
