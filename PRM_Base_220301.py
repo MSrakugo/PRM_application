@@ -54,13 +54,20 @@ st.caption("This is a prototype application. If you find any errors, please poin
 st.caption("Protolith included in training data: Mid-ocean ridge (MORB), Ocean island basalt (OIB), Volcanic arc basalt (VAB), Back-arc basin basalt (BAB)")
 
 #### read example dataset
-example_data = pd.read_excel("Example_dataset/Kelley_2003_compile.xlsx", index_col=0)
+#example_data = pd.read_excel("Example_dataset/Kelley_2003_compile.xlsx", index_col=0)
 #st.sidebar.download_button(
 #    label="Example dataset (Quoted from PetDB)",
 #    data=example_data.to_csv().encode('utf-8'),
 #    file_name="Example_dataset(Kelley_2003).csv",
 #    mime='text/csv',
 #    )
+
+
+now_model_folder_name = 'models_220203_ALL_ALL'
+# model score read
+now_model_folder_score_name = now_model_folder_name+"/"+str(immobile_elem).strip("[").strip("]").strip("'")+"/Score_all.xlsx"
+model_score = pd.read_excel(now_model_folder_score_name, index_col=0)
+
 
 ###### Data input
 uploaded_file = st.sidebar.file_uploader("Choose a file (Excel or CSV)")
