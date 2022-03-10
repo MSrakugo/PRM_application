@@ -56,7 +56,7 @@ st.caption("Protolith included in training data: Mid-ocean ridge (MORB), Ocean i
 #### read example dataset
 example_data = pd.read_excel("Example_Dataset/Kelley_2003_compile.xlsx", index_col=0)
 st.sidebar.download_button(
-    label="Example dataset (Quoted from PetDB)",
+    label="Example dataset (Kelley et al. 2003; Quoted from PetDB)",
     data=example_data.to_csv().encode('utf-8'),
     file_name="Example_dataset(Kelley_2003).csv",
     mime='text/csv',
