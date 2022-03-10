@@ -136,7 +136,7 @@ else:
     # select sample
     choice_sample = st.selectbox('Select sample',spidergram_data_compile.index, )
 
-    
+    st.subheader("Visualize your data")
     ###### figure 
     fig, ax = plt.subplots(constrained_layout=True)
     # road data
