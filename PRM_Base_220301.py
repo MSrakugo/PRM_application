@@ -198,7 +198,7 @@ st.caption("Press release in English: Coming soon...")
 st.caption("Made by Satoshi Matsuno (Graduate School of Environmental Studies, Tohoku univ.)")
 
 #### read example dataset
-example_data = pd.read_excel("Example_dataset/Kelley_2003_compile.xlsx", index_col=0)
+example_data = pd.read_excel("Example_Dataset/Kelley_2003_compile.xlsx", index_col=0)
 st.download_button(
     label="Example dataset (Quoted from PetDB)",
     data=example_data.to_csv().encode('utf-8'),
