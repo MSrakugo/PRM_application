@@ -114,7 +114,7 @@ else:
 if raw_data is None:
     pass
 else:
-    st.write(raw_data)
+    raw_data
     ###### Data check/preprocessing
     PM, Location_Ref_Data = prm.preprocessing_normalize(raw_data, DataBase, SAMPLE_INFO, location_info)
     #st.write(PM)
