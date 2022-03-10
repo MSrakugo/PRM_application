@@ -133,32 +133,33 @@ else:
     mobile_data_compile, spidergram_data_compile = prm_predict.predict_protolith(mobile_elem, immobile_elem, PM, Location_Ref_Data, now_model_folder_name)
 
     ###### Data visualization
-    # select sample
-    choice_sample = st.selectbox('Select sample',spidergram_data_compile.index, )
-
     st.subheader("Visualize your data")
-    ###### figure 
-    fig, ax = plt.subplots(constrained_layout=True)
-    # road data
-    pred_data_now = pd.DataFrame(spidergram_data_compile.loc[choice_sample]).T.dropna(axis=1)
-    now_col=pred_data_now.columns
-    raw_data_now=pd.DataFrame(PM.loc[choice_sample]).T[now_col]
-    model_score_now=model_score[now_col]
-    values = st.slider('Select y axis range in log scale',-10.0, 10.0, (-1.0, 3.0))
-    
-    # figure control
-    #fig=prm.Spidergram_fill_immobile(now_col, immobile_elem, '#ecc06f', 0.18, fig, ax)
-    fig=prm.Spidergram_simple(raw_data_now, "log", "off","#344c5c", "--", "off", fig, ax)
-    fig=prm.Spidergram_error(pred_data_now, model_score_now,"log", "on","#f08575", "-", "off", fig, ax)
-    fig=prm.Spidergram_marker(raw_data_now, immobile_elem, '#f08575', '#344c5c', 'd', 16, fig, ax)
-    plt.title(choice_sample)
-    plt.ylabel("Sample / PM")
-    plt.legend(["Metabasalt comp.", "Protolith comp."])
-    plt.ylim(10**values[0], 10**values[1])
-    # figure control
-    
-    st.pyplot(fig)
-    ###### Data visualization
+    with st.expander("See explanation"):   
+        # select sample
+        choice_sample = st.selectbox('Select sample',spidergram_data_compile.index, )
+        
+        ###### figure 
+        fig, ax = plt.subplots(constrained_layout=True)
+        # road data
+        pred_data_now = pd.DataFrame(spidergram_data_compile.loc[choice_sample]).T.dropna(axis=1)
+        now_col=pred_data_now.columns
+        raw_data_now=pd.DataFrame(PM.loc[choice_sample]).T[now_col]
+        model_score_now=model_score[now_col]
+        values = st.slider('Select y axis range in log scale',-10.0, 10.0, (-1.0, 3.0))
+        
+        # figure control
+        #fig=prm.Spidergram_fill_immobile(now_col, immobile_elem, '#ecc06f', 0.18, fig, ax)
+        fig=prm.Spidergram_simple(raw_data_now, "log", "off","#344c5c", "--", "off", fig, ax)
+        fig=prm.Spidergram_error(pred_data_now, model_score_now,"log", "on","#f08575", "-", "off", fig, ax)
+        fig=prm.Spidergram_marker(raw_data_now, immobile_elem, '#f08575', '#344c5c', 'd', 16, fig, ax)
+        plt.title(choice_sample)
+        plt.ylabel("Sample / PM")
+        plt.legend(["Metabasalt comp.", "Protolith comp."])
+        plt.ylim(10**values[0], 10**values[1])
+        # figure control
+        
+        st.pyplot(fig)
+        ###### Data visualization
 
 
     protolith_data = spidergram_data_compile.copy()
