@@ -50,7 +50,7 @@ class Model_feature_setting:
 
 #################################################################################### sidebar
 st.header("Protolith reconstruction model (PRM) for Metabasalt")
-st.caption("This is a prototype application. If you find any errors, please point them out to us through Github. https://github.com/MSrakugo/PRM_application")
+st.caption("This is a prototype application. If you find any errors, please point them out to us through Github: https://github.com/MSrakugo/PRM_application")
 st.caption("Protolith included in training data: Mid-ocean ridge (MORB), Ocean island basalt (OIB), Volcanic arc basalt (VAB), Back-arc basin basalt (BAB)")
 
 #### read example dataset
@@ -134,7 +134,7 @@ else:
 
     ###### Data visualization
     st.subheader("Visualize your data")
-    with st.expander("See explanation"):   
+    with st.expander("See the result of spidergram"):   
         # select sample
         choice_sample = st.selectbox('Select sample',spidergram_data_compile.index, )
         
@@ -159,7 +159,7 @@ else:
         # figure control
         
         st.pyplot(fig)
-        ###### Data visualization
+    ###### Data visualization
 
 
     protolith_data = spidergram_data_compile.copy()
