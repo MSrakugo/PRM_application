@@ -134,7 +134,7 @@ else:
 
     ###### Data visualization
     st.subheader("Visualize your data")
-    with st.expander("See spidergram"):   
+    with st.expander("See explanation"):   
         # select sample
         choice_sample = st.selectbox('Select sample',spidergram_data_compile.index, )
         
