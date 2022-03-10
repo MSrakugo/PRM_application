@@ -203,6 +203,7 @@ def preprocessing_normalize(data, DataBase, SAMPLE_INFO, location_info):
     C1 = pd.concat([Whole_rock_after_Normalize_C1, Whole_rock_cannot_Normalize], axis = 1)
     Location_Ref_Data = Whole_rock_cannot_Normalize[location_info]
     
+    st.subheader("Download preprocessed data")
     col1, col2, col3, col4 = st.columns(4)
     
     with col1:

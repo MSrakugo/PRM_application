@@ -49,7 +49,7 @@ class Model_feature_setting:
 
 
 #################################################################################### sidebar
-st.header("Protolith reconstruction model for Metabasalt")
+st.header("Protolith reconstruction model (PRM) for Metabasalt")
 st.caption("This is a prototype application. If you find any errors, please point them out to us through Github.")
 st.caption("Protolith included in training data: Mid-ocean ridge (MORB), Ocean island basalt (OIB), Volcanic arc basalt (VAB), Back-arc basin basalt (BAB)")
 
