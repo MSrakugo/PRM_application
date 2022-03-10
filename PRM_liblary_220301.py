@@ -192,7 +192,7 @@ def preprocessing_normalize(data, DataBase, SAMPLE_INFO, location_info):
     ##################################################### major DATA for exchange % to ppm
     Data_bef = exchange_major_to_ppm(Data_bef)
     ##################################################### Calc CIA
-    Data_bef=CIA_value_calc(Data_bef)
+    #Data_bef=CIA_value_calc(Data_bef)
     ##################################################### Normalize data
     Primitive_not_applied = Data_bef.copy()
     Whole_rock, Whole_rock_cannot_Normalize, Whole_rock_after_Normalize_PM, Whole_rock_after_Normalize_C1 = primitive_applied(Primitive_not_applied)
@@ -279,7 +279,7 @@ def Spidergram_simple(data, scale, legend, color, style, label, fig, ax):
         plt.legend(data.index)
     return fig
 
-def Spidergram_marker(data, immobile_elem, color, markeredgecolor, style, size):
+def Spidergram_marker(data, immobile_elem, color, markeredgecolor, style, size, fig, ax):
     ######## Define X(columns) and X length
     columns = data.columns
     length = data.values.shape[1]
@@ -303,9 +303,9 @@ def Spidergram_marker(data, immobile_elem, color, markeredgecolor, style, size):
                      markersize=size, markevery=marker_row, markeredgecolor=markeredgecolor, markeredgewidth=2.5)
     ######## marker plot
 
-    
+    return fig
 
-def Spidergram_error(data, model_score,scale, legend, color, style, label):
+def Spidergram_error(data, model_score,scale, legend, color, style, label, fig, ax):
     ######## Define X(columns) and X length
     columns = data.columns
     length = data.values.shape[1]
@@ -342,8 +342,9 @@ def Spidergram_error(data, model_score,scale, legend, color, style, label):
      
     if (legend == "on"):
         plt.legend(data.index)
+    return fig
 
-def Spidergram_fill_between(data, scale, legend, color, style, label, alpha):
+def Spidergram_fill_between(data, scale, legend, color, style, label, alpha, fig, ax):
 
     ######## Define X(columns) and X length
     columns = data.columns
@@ -370,7 +371,7 @@ def Spidergram_fill_between(data, scale, legend, color, style, label, alpha):
     if (legend == "on"):
         plt.legend(data.index)
 
-def Spidergram_fill_immobile(columns, immobile_elem, color, alpha):
+def Spidergram_fill_immobile(columns, immobile_elem, color, alpha, fig, ax):
     ######## Define X(columns) and X length
     length = len(columns)
     t = np.arange(0,length, 1)
@@ -390,8 +391,9 @@ def Spidergram_fill_immobile(columns, immobile_elem, color, alpha):
         num = list(columns).index(elem)
         plt.axvspan(num-0.45, num+0.45, color = color, alpha = alpha)
     ######## Define fill index
+    return fig
 
-def Spidergram_ragne_as_error_bar(data, range, scale, legend, color, style, label):
+def Spidergram_ragne_as_error_bar(data, range, scale, legend, color, style, label, fig, ax):
     columns = data.columns
     length = data.values.shape[1]
     t = np.arange(0,length, 1)
