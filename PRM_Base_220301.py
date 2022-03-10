@@ -53,15 +53,6 @@ st.header("Protolith reconstruction model for Metabasalt")
 st.caption("This is a prototype application. If you find any errors, please point them out to us through Github.")
 st.caption("Protolith included in training data: Mid-ocean ridge (MORB), Ocean island basalt (OIB), Volcanic arc basalt (VAB), Back-arc basin basalt (BAB)")
 
-#### read example dataset
-#example_data = pd.read_excel("Example_dataset/Kelley_2003_compile.xlsx", index_col=0)
-#st.sidebar.download_button(
-#    label="Example dataset (Quoted from PetDB)",
-#    data=example_data.to_csv().encode('utf-8'),
-#    file_name="Example_dataset(Kelley_2003).csv",
-#    mime='text/csv',
-#    )
-
 ###### Data input
 uploaded_file = st.sidebar.file_uploader("Choose a file (Excel or CSV)")
 index_col = age = st.sidebar.slider('Input index_columns number', 0, 10, 0)
@@ -205,3 +196,12 @@ st.caption("Matsuno, S., Uno, M., Okamoto, A. Tsuchiya, N. Machine-learning tech
 st.caption("Press release in Japanese: https://www.tohoku.ac.jp/japanese/2022/02/press20220210-01-machine.html")
 st.caption("Press release in English: Coming soon...")
 st.caption("Made by Satoshi Matsuno (Graduate School of Environmental Studies, Tohoku univ.)")
+
+#### read example dataset
+example_data = pd.read_excel("Example_dataset/Kelley_2003_compile.xlsx", index_col=0)
+st.download_button(
+    label="Example dataset (Quoted from PetDB)",
+    data=example_data.to_csv().encode('utf-8'),
+    file_name="Example_dataset(Kelley_2003).csv",
+    mime='text/csv',
+    )
