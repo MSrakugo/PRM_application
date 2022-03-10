@@ -134,7 +134,7 @@ else:
 
     ###### Data visualization
     # select sample
-    choice_sample = st.selectbox('Choice sample',spidergram_data_compile.index, )
+    choice_sample = st.selectbox('Select sample',spidergram_data_compile.index, )
 
     
     ###### figure 
@@ -165,7 +165,7 @@ else:
     protolith_data_ppm = prm.PM_to_ppm(protolith_data)
     element_mobility = PM[protolith_data.columns]/protolith_data
 
-
+    st.subheader("Download PRM results")
     col1, col2, col3, col4 = st.columns(4)
 
     with col1:
