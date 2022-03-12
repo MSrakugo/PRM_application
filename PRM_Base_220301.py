@@ -137,7 +137,7 @@ else:
 
     ###### Data visualization
     st.subheader("Visualize your data")
-    with st.expander("See the result of spidergram"):   
+    with st.expander("See figures"):   
         # select sample
         choice_sample = st.selectbox('Select sample',spidergram_data_compile.index, )
         
@@ -181,7 +181,7 @@ else:
         # figure control
         # figure setting
         plt.title(choice_sample)
-        plt.ylabel("Element mobility")
+        plt.ylabel("Metabasalt/Protolith")
         plt.ylim(10**values_m[0], 10**values_m[1])
         plt.tick_params(which='both', direction='in',bottom=True, left=True, top=True, right=True)
         plt.tick_params(which = 'major', length = 7.5, width = 2)
