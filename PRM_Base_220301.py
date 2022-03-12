@@ -173,11 +173,11 @@ else:
         fig, ax = plt.subplots(constrained_layout=True)
         pred_mobility_now = raw_data_now/pred_data_now
         
-        values_m = st.slider('Select y axis range in log scale for mobility figure',-10.0, 10.0, (-1.0, 3.0))
+        values_m = st.slider('Select y axis range in log scale for mobility figure',-10.0, 10.0, (-1.0, 2.0))
         # figure control
+        plt.hlines(y=1, xmin=0, xmax=len(pred_mobility_now)-1, color = "#344c5c", linestyle='--',)
         fig=prm.Spidergram_error(pred_mobility_now, model_score_now,"log", "on","#f08575", "-", "off", fig, ax)
         fig=prm.Spidergram_marker(pred_mobility_now, immobile_elem, '#f08575', '#344c5c', 'd', 16, fig, ax)
-        plt.hlines(y=1, xmin=0, xmax=len(pred_mobility_now)-1, color = "#344c5c", linestyle='--',)
         # figure control
         # figure setting
         plt.title(choice_sample)
