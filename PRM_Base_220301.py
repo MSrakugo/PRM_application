@@ -177,7 +177,7 @@ else:
         # figure control
         #fig=prm.Spidergram_error(pred_mobility_now, model_score_now,"log", "off","#f08575", "-", "off", fig, ax)
         #fig=prm.Spidergram_marker(pred_mobility_now, immobile_elem, '#f08575', '#344c5c', 'd', 16, fig, ax)
-        plt.hlines(y=1, xmin=0, xmax=len(pred_mobility_now)-1, color = "#344c5c", linestyle='--',)
+        plt.hlines(y=1, xmin=0, xmax=len(pred_mobility_now)-1, color = "#344c5c", linestyle='-',)
         # figure control
         # figure setting
         plt.title(choice_sample)
