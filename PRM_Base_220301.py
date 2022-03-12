@@ -182,7 +182,7 @@ else:
         # figure setting
         plt.title(choice_sample)
         plt.ylabel("Element mobility")
-        plt.ylim(10**values_m[0], 10**values_m[1])
+        #plt.ylim(10**values_m[0], 10**values_m[1])
         plt.tick_params(which='both', direction='in',bottom=True, left=True, top=True, right=True)
         plt.tick_params(which = 'major', length = 7.5, width = 2)
         plt.tick_params(which = 'minor', length = 4, width = 1)
