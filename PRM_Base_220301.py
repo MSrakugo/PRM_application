@@ -149,7 +149,7 @@ else:
         now_col=pred_data_now.columns
         raw_data_now=pd.DataFrame(PM.loc[choice_sample]).T[now_col]
         model_score_now=model_score[now_col]
-        values = st.slider('Select y axis range in log scale',-10.0, 10.0, (-1.0, 3.0))
+        values = st.slider('Select y axis range in log scale for spidergram',-10.0, 10.0, (-1.0, 3.0))
         
         # figure control
         #fig=prm.Spidergram_fill_immobile(now_col, immobile_elem, '#ecc06f', 0.18, fig, ax)
@@ -168,10 +168,10 @@ else:
         fig, ax = plt.subplots(constrained_layout=True)
         pred_mobility_now = raw_data_now/pred_data_now
         pred_mobility_now
-        #values_m = st.slider('Select y axis range in log scale',-10.0, 10.0, (-1.0, 3.0))
+        values_m = st.slider('Select y axis range in log scale for mobility figure',-10.0, 10.0, (-1.0, 3.0))
         # figure control
-        fig=prm.Spidergram_error(pred_data_now, model_score_now,"log", "on","#f08575", "-", "off", fig, ax)
-        fig=prm.Spidergram_marker(raw_data_now, immobile_elem, '#f08575', '#344c5c', 'd', 16, fig, ax)
+        fig=prm.Spidergram_error(pred_mobility_now, model_score_now,"log", "on","#f08575", "-", "off", fig, ax)
+        fig=prm.Spidergram_marker(pred_mobility_now, immobile_elem, '#f08575', '#344c5c', 'd', 16, fig, ax)
         plt.title(choice_sample)
         plt.ylabel("Element mobility")
         #plt.ylim(10**values_m[0], 10**values_m[1])
