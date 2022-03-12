@@ -141,6 +141,7 @@ else:
         # select sample
         choice_sample = st.selectbox('Select sample',spidergram_data_compile.index, )
         
+        st.subheader("Spidergram")
         ###### figure 
         fig, ax = plt.subplots(constrained_layout=True)
         # road data
@@ -160,8 +161,23 @@ else:
         plt.legend(["Metabasalt comp.", "Protolith comp."])
         plt.ylim(10**values[0], 10**values[1])
         # figure control
-        
         st.pyplot(fig)
+        
+        
+        st.subheader("Element mobility")
+        fig, ax = plt.subplots(constrained_layout=True)
+        pred_mobility_now = raw_data_now/pred_data_now 
+        values_m = st.slider('Select y axis range in log scale',-10.0, 10.0, (-1.0, 3.0))
+        # figure control
+        fig=prm.Spidergram_error(pred_data_now, model_score_now,"log", "on","#f08575", "-", "off", fig, ax)
+        fig=prm.Spidergram_marker(raw_data_now, immobile_elem, '#f08575', '#344c5c', 'd', 16, fig, ax)
+        plt.title(choice_sample)
+        plt.ylabel("Element mobility")
+        plt.ylim(10**values[0], 10**values[1])
+        
+        st.pyplot(fig)        
+        
+        
     ###### Data visualization
 
 
