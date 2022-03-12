@@ -54,7 +54,7 @@ st.caption("This is a prototype application. If you find any errors, please poin
 st.caption("Protolith included in training data: Mid-ocean ridge (MORB), Ocean island basalt (OIB), Volcanic arc basalt (VAB), Back-arc basin basalt (BAB)")
 
 #### read example dataset
-example_data = pd.read_excel("Example_Dataset/Kelley_2003_compile.xlsx", index_col=0)
+example_data = pd.read_csv("Example_Dataset/Example_dataset(Kelley_2003_Seafloor_altered_basalt).csv", index_col=0)
 st.sidebar.download_button(
     label="Example dataset (Quoted from PetDB)",
     data=example_data.to_csv().encode('utf-8'),
@@ -171,18 +171,18 @@ else:
         
         st.subheader("Element mobility")
         fig, ax = plt.subplots(constrained_layout=True)
+        # road data
         pred_mobility_now = raw_data_now/pred_data_now
-        
         values_m = st.slider('Select y axis range in log scale for mobility figure',-10.0, 10.0, (-1.0, 2.0))
         # figure control
-        #fig=prm.Spidergram_error(pred_mobility_now, model_score_now,"log", "off","#f08575", "-", "off", fig, ax)
-        #fig=prm.Spidergram_marker(pred_mobility_now, immobile_elem, '#f08575', '#344c5c', 'd', 16, fig, ax)
-        plt.hlines(y=1, xmin=0, xmax=len(pred_mobility_now)-1, color = "#344c5c", linestyle='-',)
+        fig=prm.Spidergram_error(pred_mobility_now, model_score_now,"log", "off","#f08575", "-", "off", fig, ax)
+        fig=prm.Spidergram_marker(pred_mobility_now, immobile_elem, '#f08575', '#344c5c', 'd', 16, fig, ax)
+        ax.axhline(y=1, xmin=0, xmax=len(pred_mobility_now.columns)-1, color = "#344c5c", linestyle='--',)
         # figure control
         # figure setting
         plt.title(choice_sample)
         plt.ylabel("Element mobility")
-        #plt.ylim(10**values_m[0], 10**values_m[1])
+        plt.ylim(10**values_m[0], 10**values_m[1])
         plt.tick_params(which='both', direction='in',bottom=True, left=True, top=True, right=True)
         plt.tick_params(which = 'major', length = 7.5, width = 2)
         plt.tick_params(which = 'minor', length = 4, width = 1)
