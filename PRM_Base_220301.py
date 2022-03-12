@@ -166,7 +166,8 @@ else:
         
         st.subheader("Element mobility")
         fig, ax = plt.subplots(constrained_layout=True)
-        pred_mobility_now = raw_data_now/pred_data_now 
+        pred_mobility_now = raw_data_now/pred_data_now
+        pred_mobility_now
         values_m = st.slider('Select y axis range in log scale',-10.0, 10.0, (-1.0, 3.0))
         # figure control
         fig=prm.Spidergram_error(pred_data_now, model_score_now,"log", "on","#f08575", "-", "off", fig, ax)
