@@ -174,7 +174,7 @@ else:
         fig=prm.Spidergram_marker(raw_data_now, immobile_elem, '#f08575', '#344c5c', 'd', 16, fig, ax)
         plt.title(choice_sample)
         plt.ylabel("Element mobility")
-        plt.ylim(10**values[0], 10**values[1])
+        plt.ylim(10**values_m[0], 10**values_m[1])
         
         st.pyplot(fig)        
         
