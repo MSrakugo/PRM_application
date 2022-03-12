@@ -156,26 +156,37 @@ else:
         fig=prm.Spidergram_simple(raw_data_now, "log", "off","#344c5c", "--", "off", fig, ax)
         fig=prm.Spidergram_error(pred_data_now, model_score_now,"log", "on","#f08575", "-", "off", fig, ax)
         fig=prm.Spidergram_marker(raw_data_now, immobile_elem, '#f08575', '#344c5c', 'd', 16, fig, ax)
+        # figure control
+        # figure setting
         plt.title(choice_sample)
         plt.ylabel("Sample / PM")
         plt.legend(["Metabasalt comp.", "Protolith comp."])
         plt.ylim(10**values[0], 10**values[1])
-        # figure control
+        plt.tick_params(which='both', direction='in',bottom=True, left=True, top=True, right=True)
+        plt.tick_params(which = 'major', length = 7.5, width = 2)
+        plt.tick_params(which = 'minor', length = 4, width = 1)
+        # figure setting
         st.pyplot(fig)
         
         
         st.subheader("Element mobility")
         fig, ax = plt.subplots(constrained_layout=True)
         pred_mobility_now = raw_data_now/pred_data_now
-        pred_mobility_now
+        
         values_m = st.slider('Select y axis range in log scale for mobility figure',-10.0, 10.0, (-1.0, 3.0))
         # figure control
         fig=prm.Spidergram_error(pred_mobility_now, model_score_now,"log", "on","#f08575", "-", "off", fig, ax)
         fig=prm.Spidergram_marker(pred_mobility_now, immobile_elem, '#f08575', '#344c5c', 'd', 16, fig, ax)
+        plt.hlines(y=1, xmin=0, xmax=len(pred_mobility_now)-1, color = "#344c5c", linestyle='--',)
+        # figure control
+        # figure setting
         plt.title(choice_sample)
         plt.ylabel("Element mobility")
-        #plt.ylim(10**values_m[0], 10**values_m[1])
-        
+        plt.ylim(10**values_m[0], 10**values_m[1])
+        plt.tick_params(which='both', direction='in',bottom=True, left=True, top=True, right=True)
+        plt.tick_params(which = 'major', length = 7.5, width = 2)
+        plt.tick_params(which = 'minor', length = 4, width = 1)
+        # figure setting
         st.pyplot(fig)        
         
         
