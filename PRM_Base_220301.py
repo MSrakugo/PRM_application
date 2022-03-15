@@ -100,7 +100,7 @@ if raw_data is None:
 else:
     elements_list = ['Rb', 'Ba', 'Th', 'U', 'Nb', 'K', 'La', 'Ce', 'Pb', 'Sr', 'Nd', 'Zr', 'Ti', 'Y', 'Yb','Lu', 'SiO2', 'Al2O3', 'MgO', 'Na2O', 'P2O5', 'CaO', 'MnO', 'FeO', 'K2O']
     immobile_elem=st.sidebar.multiselect("Choose the immobile elements (Do Not Change)", elements_list, ["Zr", "Th", "Ti", "Nb"])
-    mobile_elem=st.sidebar.multiselect("Choose the mobile elements", elements_list, ['Rb', 'Ba', 'Th', 'U', 'Nb', 'K', 'La', 'Ce', 'Pb', 'Sr', 'Nd', 'Zr', 'Ti', 'Y', 'Yb','Lu',])
+    mobile_elem=st.sidebar.multiselect("Choose the ALL elements (Contain both mobile and immobile elements)", elements_list, ['Rb', 'Ba', 'Th', 'U', 'Nb', 'K', 'La', 'Ce', 'Pb', 'Sr', 'Nd', 'Zr', 'Ti', 'Y', 'Yb','Lu',])
 ###### Select element
 
 ###### モデル推定開始のフラグ
